@@ -1,2 +1,3 @@
 rootProject.name = 'Java-OOP'
+include 'lab1'
 
