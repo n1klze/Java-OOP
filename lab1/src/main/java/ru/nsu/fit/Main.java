@@ -19,5 +19,11 @@ public class Main {
 
     public static void main(String[] args) {
         LOGGER.log(Level.INFO, "Launch calculator application.");
+
+        LOGGER.log(Level.INFO, "Parsing command line.");
+        CommandLineParser commandParser = new CommandLineParser();
+        commandParser.parse(args);
+
+
     }
 }
