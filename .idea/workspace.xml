@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7ee2544-4fc4-4419-989a-8656504167c2" name="Changes" comment="[lab1] Add file logger.">
+    <list default="true" id="b7ee2544-4fc4-4419-989a-8656504167c2" name="Changes" comment="[lab1] Update logging.properties.">
       <change afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/CommandLineParser.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/commands/Push.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/exceptions/StackSizeException.java" afterDir="false" />
@@ -12,7 +12,6 @@
       <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/Context.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/Context.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/commands/Command.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/commands/Pop.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/commands/Pop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/src/main/resources/logging.properties" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/resources/logging.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +91,7 @@
       <workItem from="1675498855717" duration="209000" />
       <workItem from="1675499078096" duration="2609000" />
       <workItem from="1676053388263" duration="624000" />
-      <workItem from="1677935733957" duration="20451000" />
+      <workItem from="1677935733957" duration="23843000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1675495847312</created>
@@ -122,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678027063325</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="[lab1] Update logging.properties.">
+      <created>1678027465349</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1678027465349</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,7 +150,8 @@
     <MESSAGE value="Template for labs" />
     <MESSAGE value="[lab1] Create an execution context class and command interface." />
     <MESSAGE value="[lab1] Add file logger." />
-    <option name="LAST_COMMIT_MESSAGE" value="[lab1] Add file logger." />
+    <MESSAGE value="[lab1] Update logging.properties." />
+    <option name="LAST_COMMIT_MESSAGE" value="[lab1] Update logging.properties." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

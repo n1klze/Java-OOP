@@ -12,13 +12,13 @@ import java.util.Map;
  */
 public class Context {
     private Deque<Double> stack = new ArrayDeque<>();
-    private Map<String, Double> namedParametersList = new HashMap<>();
-
-    public Map<String, Double> getNamedParametersList() {
-        return namedParametersList;
-    }
+    private Map<String[], Double> namedParametersList = new HashMap<>();
 
     public Deque<Double> getStack() {
         return stack;
+    }
+
+    public Map<String[], Double> getNamedParametersList() {
+        return namedParametersList;
     }
 }
