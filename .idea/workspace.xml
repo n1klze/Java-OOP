@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7ee2544-4fc4-4419-989a-8656504167c2" name="Changes" comment="[lab1] Update push command.&#10;Create a stack size exception.">
-      <change afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/CommandLineParser.java" afterDir="false" />
+    <list default="true" id="b7ee2544-4fc4-4419-989a-8656504167c2" name="Changes" comment="[lab1] Add command line parser.">
+      <change afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/CommandFactory.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/commands/Push.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab1/src/main/resources/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/CommandLineParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/CommandLineParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/main/resources/logging.properties" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/resources/logging.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +61,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.general",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -68,6 +71,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="ru.nsu.fit.Main" />
       <module name="Java-OOP.lab1.main" />
+      <option name="PROGRAM_PARAMETERS" value="a.out" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -88,7 +92,9 @@
       <workItem from="1675498855717" duration="209000" />
       <workItem from="1675499078096" duration="2609000" />
       <workItem from="1676053388263" duration="624000" />
-      <workItem from="1677935733957" duration="29532000" />
+      <workItem from="1677935733957" duration="30667000" />
+      <workItem from="1678037889304" duration="96000" />
+      <workItem from="1678037996596" duration="9212000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1675495847312</created>
@@ -132,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678031072481</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="[lab1] Add command line parser.">
+      <created>1678036762738</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1678036762738</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,7 +169,8 @@
     <MESSAGE value="[lab1] Add file logger." />
     <MESSAGE value="[lab1] Update logging.properties." />
     <MESSAGE value="[lab1] Update push command.&#10;Create a stack size exception." />
-    <option name="LAST_COMMIT_MESSAGE" value="[lab1] Update push command.&#10;Create a stack size exception." />
+    <MESSAGE value="[lab1] Add command line parser." />
+    <option name="LAST_COMMIT_MESSAGE" value="[lab1] Add command line parser." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
