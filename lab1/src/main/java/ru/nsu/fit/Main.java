@@ -1,6 +1,8 @@
 package ru.nsu.fit;
 
 import ru.nsu.fit.commands.Command;
+import ru.nsu.fit.exceptions.CommandCreationException;
+import ru.nsu.fit.exceptions.StackSizeException;
 
 import java.io.InputStream;
 import java.util.Scanner;
@@ -38,15 +40,20 @@ public class Main {
 
         LOGGER.log(Level.INFO, "Start executing commands.");
         Scanner scanner = new Scanner(commandParser.getIn());
+        CommandFactory commandFactory = new CommandFactory();
         while (scanner.hasNextLine()) {
             try {
                 String[] arguments = scanner.nextLine().split(" ");
 
                 LOGGER.log(Level.INFO, "Make " + arguments[0] + " command.");
-                //Command command;
-                LOGGER.log(Level.FINEST, "Success.");
-                //command.make(arguments, executionContext);
-            } catch (Exception except) {
+                Command command = commandFactory.create(arguments[0]);
+                LOGGER.log(Level.FINEST, "Command successfully created.");
+                command.make(arguments, executionContext);
+            } catch (StackSizeException except) {
+                LOGGER.log(Level.SEVERE, except.getMessage());
+                scanner.close();
+                System.exit(0);
+            } catch (CommandCreationException except) {
                 LOGGER.log(Level.WARNING, except.getMessage());
             }
         }
