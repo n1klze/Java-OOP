@@ -8,9 +8,17 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 public class Define implements Command {
+    /**
+     * Define string key with numeric variable
+     *
+     * @param args             command arguments
+     * @param executionContext contains stack of values and named parameters dictionary.
+     * @throws ArgumentSizeException   if not enough elements in the stack.
+     * @throws ArgumentFormatException if first argument is numeric or second argument is non-numeric.
+     */
     @Override
     public void exec(String[] args, Context executionContext) throws ArgumentSizeException, ArgumentFormatException {
-        Map<String, Double> namedParameters = executionContext.getNamedParametersList();
+        Map<String, Double> namedParameters = executionContext.getNamedParametersDictionary();
 
         if (args.length != 3) throw new ArgumentSizeException();
 

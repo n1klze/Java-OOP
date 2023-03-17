@@ -2,7 +2,6 @@ package ru.nsu.fit;
 
 import ru.nsu.fit.commands.Command;
 import ru.nsu.fit.exceptions.ArgumentException;
-import ru.nsu.fit.exceptions.ArgumentSizeException;
 import ru.nsu.fit.exceptions.CommandCreationException;
 import ru.nsu.fit.exceptions.StackSizeException;
 
@@ -13,7 +12,11 @@ import java.util.logging.Level;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
+/**
+ * @author Nikita Melnikov
+ */
 public class Main {
+    private static final char COMMENT_SYMBOL = '#';
     private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
 
     static {
@@ -47,6 +50,8 @@ public class Main {
         try (Scanner scanner = new Scanner(commandParser.getIn())) {
             while (scanner.hasNextLine()) {
                 String[] arguments = scanner.nextLine().split(" ");
+                if (arguments[0].charAt(0) == COMMENT_SYMBOL)
+                    continue;
 
                 try {
                     LOGGER.log(Level.INFO, "Run " + Arrays.toString(arguments) + " command.");

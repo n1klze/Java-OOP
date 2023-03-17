@@ -6,11 +6,18 @@ import ru.nsu.fit.exceptions.ArgumentSizeException;
 import java.util.Deque;
 import java.util.Map;
 
-public class Push implements Command{
+public class Push implements Command {
+    /**
+     * Pushes an element onto the top of the stack
+     *
+     * @param args             command arguments
+     * @param executionContext contains stack of values and named parameters list.
+     * @throws ArgumentSizeException if is too many parameters.
+     */
     @Override
     public void exec(String[] args, Context executionContext) throws ArgumentSizeException {
         Deque<Double> stack = executionContext.getStack();
-        Map<String, Double> namedParameters = executionContext.getNamedParametersList();
+        Map<String, Double> namedParameters = executionContext.getNamedParametersDictionary();
 
         if (args.length != 2) throw new ArgumentSizeException();
 

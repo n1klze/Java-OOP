@@ -9,6 +9,13 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Properties;
 
 public class CommandFactory {
+    /**
+     * Instantiates command object.
+     *
+     * @param commandName name of command to instantiation.
+     * @return command object.
+     * @throws CommandCreationException if the object cannot be created.
+     */
     public Command create(String commandName) throws CommandCreationException {
         Properties configuration = new Properties();
         Command command;

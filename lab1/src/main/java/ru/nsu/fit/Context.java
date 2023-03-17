@@ -6,9 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Contains stack of values and named parameters list.
- *
- * @author Nikita Melnikov
+ * Contains stack of values and named parameters dictionary.
  */
 public class Context {
     private Deque<Double> stack = new ArrayDeque<>();
@@ -18,7 +16,7 @@ public class Context {
         return stack;
     }
 
-    public Map<String, Double> getNamedParametersList() {
+    public Map<String, Double> getNamedParametersDictionary() {
         return namedParametersList;
     }
 }

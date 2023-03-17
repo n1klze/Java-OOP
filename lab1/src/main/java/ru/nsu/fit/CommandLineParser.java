@@ -7,6 +7,11 @@ import java.io.InputStream;
 public class CommandLineParser {
     private InputStream in;
 
+    /**
+     * Parse command line arguments. Read name of input file, else read commands from System.in.
+     *
+     * @param args command line arguments
+     */
     public void parse(String[] args) {
         if (args == null || args.length == 0) {
             in = System.in;
