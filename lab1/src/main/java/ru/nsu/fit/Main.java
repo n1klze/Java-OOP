@@ -1,6 +1,7 @@
 package ru.nsu.fit;
 
 import ru.nsu.fit.commands.Command;
+import ru.nsu.fit.exceptions.ArgumentException;
 import ru.nsu.fit.exceptions.ArgumentSizeException;
 import ru.nsu.fit.exceptions.CommandCreationException;
 import ru.nsu.fit.exceptions.StackSizeException;
@@ -52,16 +53,14 @@ public class Main {
                     Command command = commandFactory.create(arguments[0]);
                     LOGGER.log(Level.FINEST, "Command completed successfully.");
                     command.exec(arguments, executionContext);
-                } catch (CommandCreationException | ArgumentSizeException except) {
+                } catch (CommandCreationException | ArgumentException except) {
                     LOGGER.log(Level.WARNING, except.getMessage());
                 }
             }
         } catch (StackSizeException except) {
             LOGGER.log(Level.SEVERE, except.getMessage());
             System.exit(0);
-        }/* catch (CommandCreationException | ArgumentSizeException except) {
-            LOGGER.log(Level.WARNING, except.getMessage());
-        }*/
+        }
 
         LOGGER.log(Level.FINEST, "Application exit successfully.");
     }

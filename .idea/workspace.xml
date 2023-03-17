@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7ee2544-4fc4-4419-989a-8656504167c2" name="Changes" comment="[lab1] Add PRINT command.">
+    <list default="true" id="b7ee2544-4fc4-4419-989a-8656504167c2" name="Changes" comment="[lab1] Update exception hierarchy.">
       <change afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/commands/Define.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/exceptions/ArgumentException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/exceptions/ArgumentFormatException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/commands/Command.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/commands/Push.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/commands/Push.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/exceptions/ArgumentSizeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/exceptions/ArgumentSizeException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/exceptions/ArgumentFormatException.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/exceptions/ArgumentFormatException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab1/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/resources/config.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +94,7 @@
       <workItem from="1677935733957" duration="30667000" />
       <workItem from="1678037889304" duration="96000" />
       <workItem from="1678037996596" duration="24544000" />
-      <workItem from="1679027319628" duration="7648000" />
+      <workItem from="1679027319628" duration="8723000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1675495847312</created>
@@ -190,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679035938690</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="[lab1] Update exception hierarchy.">
+      <created>1679037862358</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1679037862358</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,7 +224,8 @@
     <MESSAGE value="[lab1] Add CommandCreationException for CommandFactory." />
     <MESSAGE value="[lab1] Add PUSH command." />
     <MESSAGE value="[lab1] Add PRINT command." />
-    <option name="LAST_COMMIT_MESSAGE" value="[lab1] Add PRINT command." />
+    <MESSAGE value="[lab1] Update exception hierarchy." />
+    <option name="LAST_COMMIT_MESSAGE" value="[lab1] Update exception hierarchy." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

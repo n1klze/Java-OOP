@@ -8,11 +8,11 @@ import java.util.Map;
 
 public class Push implements Command{
     @Override
-    public void exec(String[] args, Context executionContext) {
+    public void exec(String[] args, Context executionContext) throws ArgumentSizeException {
         Deque<Double> stack = executionContext.getStack();
         Map<String, Double> namedParameters = executionContext.getNamedParametersList();
 
-        if (args.length < 2) throw new ArgumentSizeException();
+        if (args.length != 2) throw new ArgumentSizeException();
 
         try {
             Double currentValue;

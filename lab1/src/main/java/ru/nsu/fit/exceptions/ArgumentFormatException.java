@@ -1,7 +1,7 @@
 package ru.nsu.fit.exceptions;
 
 public class ArgumentFormatException extends ArgumentException {
-    public ArgumentFormatException() {
-        super("Bad argument format.");
+    public ArgumentFormatException(String message) {
+        super(message);
     }
 }
