@@ -10,5 +10,5 @@ public interface Command {
      * @throws StackSizeException
      * @author Nikita Melnikov
      */
-    void make(String[] args, Context executionContext) throws StackSizeException;
+    void exec(String[] args, Context executionContext) throws StackSizeException;
 }

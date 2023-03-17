@@ -5,6 +5,7 @@ import ru.nsu.fit.exceptions.CommandCreationException;
 import ru.nsu.fit.exceptions.StackSizeException;
 
 import java.io.InputStream;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.LogManager;
@@ -39,25 +40,24 @@ public class Main {
         Context executionContext = new Context();
 
         LOGGER.log(Level.INFO, "Start executing commands.");
-        Scanner scanner = new Scanner(commandParser.getIn());
+
         CommandFactory commandFactory = new CommandFactory();
-        while (scanner.hasNextLine()) {
-            try {
+        try (Scanner scanner = new Scanner(commandParser.getIn())) {
+            while (scanner.hasNextLine()) {
                 String[] arguments = scanner.nextLine().split(" ");
 
-                LOGGER.log(Level.INFO, "Make " + arguments[0] + " command.");
+                LOGGER.log(Level.INFO, "Run " + Arrays.toString(arguments) + " command.");
                 Command command = commandFactory.create(arguments[0]);
                 LOGGER.log(Level.FINEST, "Command successfully created.");
-                command.make(arguments, executionContext);
-            } catch (StackSizeException except) {
-                LOGGER.log(Level.SEVERE, except.getMessage());
-                scanner.close();
-                System.exit(0);
-            } catch (CommandCreationException except) {
-                LOGGER.log(Level.WARNING, except.getMessage());
+                command.exec(arguments, executionContext);
             }
+        } catch (StackSizeException except) {
+            LOGGER.log(Level.SEVERE, except.getMessage());
+            System.exit(0);
+        } catch (CommandCreationException except) {
+            LOGGER.log(Level.WARNING, except.getMessage());
         }
-        LOGGER.log(Level.INFO, "Finish executing commands.");
-        scanner.close();
+
+        LOGGER.log(Level.FINEST, "Application exit successfully.");
     }
 }

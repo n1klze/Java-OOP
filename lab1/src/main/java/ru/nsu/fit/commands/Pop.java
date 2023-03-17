@@ -7,7 +7,7 @@ import java.util.Deque;
 
 public class Pop implements Command {
     @Override
-    public void make(String[] args, Context executionContext) throws StackSizeException {
+    public void exec(String[] args, Context executionContext) throws StackSizeException {
         Deque<Double> stack = executionContext.getStack();
         if (stack.size() == 0)
             throw new StackSizeException();
