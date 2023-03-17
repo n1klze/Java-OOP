@@ -4,18 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7ee2544-4fc4-4419-989a-8656504167c2" name="Changes" comment="[lab1] Add CommandCreationException for CommandFactory.">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab1/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/commands/Push.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/exceptions/ArgumentSizeException.java" afterDir="false" />
+    <list default="true" id="b7ee2544-4fc4-4419-989a-8656504167c2" name="Changes" comment="[lab1] Add PUSH command.">
+      <change afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/commands/Print.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/CommandFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/CommandFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/Context.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/Context.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/commands/Command.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/commands/Pop.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/commands/Pop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/exceptions/ArgumentSizeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/exceptions/ArgumentSizeException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab1/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/resources/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/main/resources/logging.properties" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/resources/logging.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +96,7 @@
       <workItem from="1677935733957" duration="30667000" />
       <workItem from="1678037889304" duration="96000" />
       <workItem from="1678037996596" duration="24544000" />
-      <workItem from="1679027319628" duration="2439000" />
+      <workItem from="1679027319628" duration="5699000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1675495847312</created>
@@ -178,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678123595260</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="[lab1] Add PUSH command.">
+      <created>1679029842744</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1679029842744</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,7 +210,8 @@
     <MESSAGE value="[lab1] Update logging.properties." />
     <MESSAGE value="[lab1] Update Command Line Parser." />
     <MESSAGE value="[lab1] Add CommandCreationException for CommandFactory." />
-    <option name="LAST_COMMIT_MESSAGE" value="[lab1] Add CommandCreationException for CommandFactory." />
+    <MESSAGE value="[lab1] Add PUSH command." />
+    <option name="LAST_COMMIT_MESSAGE" value="[lab1] Add PUSH command." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

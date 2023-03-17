@@ -6,15 +6,14 @@ import ru.nsu.fit.exceptions.StackSizeException;
 
 import java.util.Deque;
 
-public class Pop implements Command {
+public class Print implements Command {
     @Override
     public void exec(String[] args, Context executionContext) throws StackSizeException, ArgumentSizeException {
         Deque<Double> stack = executionContext.getStack();
 
         if (args.length != 1) throw new ArgumentSizeException();
+        if (stack.size() == 0) throw new StackSizeException();
 
-        if (stack.size() == 0)
-            throw new StackSizeException();
-        stack.pop();
+        System.out.println(stack.peek());
     }
 }

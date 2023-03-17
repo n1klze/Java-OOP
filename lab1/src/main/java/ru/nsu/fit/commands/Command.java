@@ -1,6 +1,7 @@
 package ru.nsu.fit.commands;
 
 import ru.nsu.fit.Context;
+import ru.nsu.fit.exceptions.ArgumentSizeException;
 import ru.nsu.fit.exceptions.StackSizeException;
 
 public interface Command {
@@ -10,5 +11,5 @@ public interface Command {
      * @throws StackSizeException
      * @author Nikita Melnikov
      */
-    void exec(String[] args, Context executionContext) throws StackSizeException;
+    void exec(String[] args, Context executionContext) throws StackSizeException, ArgumentSizeException;
 }
