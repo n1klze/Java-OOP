@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7ee2544-4fc4-4419-989a-8656504167c2" name="Changes" comment="Initial commit.">
-      <change afterPath="$PROJECT_DIR$/lab2/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/Main.java" afterDir="false" />
+    <list default="true" id="b7ee2544-4fc4-4419-989a-8656504167c2" name="Changes" comment="[lab2] Initial commit.">
       <change afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/observer/Observable.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/observer/Observer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/observer/context/Context.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675495847312</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="[lab2] Initial commit.">
+      <created>1682956476936</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682956476936</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,7 +179,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit." />
+    <MESSAGE value="[lab2] Initial commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="[lab2] Initial commit." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
