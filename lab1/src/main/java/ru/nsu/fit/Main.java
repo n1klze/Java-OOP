@@ -56,8 +56,8 @@ public class Main {
                 try {
                     LOGGER.log(Level.INFO, "Run " + Arrays.toString(arguments) + " command.");
                     Command command = commandFactory.create(arguments[0]);
-                    LOGGER.log(Level.FINEST, "Command completed successfully.");
                     command.exec(arguments, executionContext);
+                    LOGGER.log(Level.FINEST, "Command completed successfully.");
                 } catch (CommandCreationException | ArgumentException except) {
                     LOGGER.log(Level.WARNING, except.getMessage());
                 }
