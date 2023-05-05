@@ -6,7 +6,7 @@ import java.awt.*;
 import java.io.IOException;
 
 public class MenuButton extends JButton {
-    private static final String FONT_PATH = "/pixel_font.ttf";
+    private static final String FONT_PATH = "/font.ttf";
     private static final Font FONT;
     private static final float FONT_SIZE = 20;
 

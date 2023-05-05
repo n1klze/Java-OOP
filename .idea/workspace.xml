@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7ee2544-4fc4-4419-989a-8656504167c2" name="Changes" comment="[lab2] Change access rules.">
+    <list default="true" id="b7ee2544-4fc4-4419-989a-8656504167c2" name="Changes" comment="[lab2] Add custom font.">
       <change afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/controller/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/view/gui/components/GameSpace.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab2/src/main/resources/pixel_font.ttf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/view/gui/components/MenuButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/view/gui/components/MenuButton.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683279608160</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="[lab2] Add custom font.">
+      <created>1683283409370</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1683283409370</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,7 +260,8 @@
     <MESSAGE value="[lab2] Create enum DifficultyLevel." />
     <MESSAGE value="[lab2] Fix codestyle." />
     <MESSAGE value="[lab2] Change access rules." />
-    <option name="LAST_COMMIT_MESSAGE" value="[lab2] Change access rules." />
+    <MESSAGE value="[lab2] Add custom font." />
+    <option name="LAST_COMMIT_MESSAGE" value="[lab2] Add custom font." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
