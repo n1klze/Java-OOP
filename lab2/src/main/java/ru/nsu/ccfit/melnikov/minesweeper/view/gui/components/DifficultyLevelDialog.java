@@ -6,9 +6,9 @@ import javax.swing.*;
 import java.awt.*;
 
 public class DifficultyLevelDialog {
-    public static final String[] LEVELS = {"Easy", "Medium", "Expert"};
-    public static final String ICON_PATH = "/mine.png";
-    public static final int[] ICON_RESOLUTION = {96, 96};
+    private static final String[] LEVELS = {"Easy", "Medium", "Expert"};
+    private static final String ICON_PATH = "/mine.png";
+    private static final int[] ICON_RESOLUTION = {96, 96};
 
     public static DifficultyLevel choose(Component frame) {
         ImageIcon icon = new ImageIcon(

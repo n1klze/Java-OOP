@@ -13,6 +13,7 @@ public class Field extends Observable {
     private final int width;
     private final int numOfMines;
     private final Cell[][] minefield;
+    private boolean isGameStarted = false;
     private boolean isGameOver = false;
 
     public int getHeight() {

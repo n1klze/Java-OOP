@@ -5,7 +5,7 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 
 public class MenuButton extends JButton {
-    public static final int FONT_SIZE = 20;
+    private static final int FONT_SIZE = 20;
 
     public MenuButton(String text) {
         super();

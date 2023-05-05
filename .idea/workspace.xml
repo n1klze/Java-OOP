@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7ee2544-4fc4-4419-989a-8656504167c2" name="Changes" comment="[lab2] Create enum DifficultyLevel.">
+    <list default="true" id="b7ee2544-4fc4-4419-989a-8656504167c2" name="Changes" comment="[lab2] Fix codestyle.">
       <change afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/model/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/model/Field.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/view/gui/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/view/gui/MainMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/view/gui/components/DifficultyLevelDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/view/gui/components/DifficultyLevelDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/view/gui/components/MenuButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/view/gui/components/MenuButton.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683271438893</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="[lab2] Fix codestyle.">
+      <created>1683278642387</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1683278642387</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,7 +246,8 @@
     <MESSAGE value="[lab2] Add some components." />
     <MESSAGE value="[lab2] Made main menu." />
     <MESSAGE value="[lab2] Create enum DifficultyLevel." />
-    <option name="LAST_COMMIT_MESSAGE" value="[lab2] Create enum DifficultyLevel." />
+    <MESSAGE value="[lab2] Fix codestyle." />
+    <option name="LAST_COMMIT_MESSAGE" value="[lab2] Fix codestyle." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

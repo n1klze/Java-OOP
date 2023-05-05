@@ -11,9 +11,10 @@ import java.awt.*;
 
 public class MainMenu extends JFrame {
     private final Controller controller;
+    private static final int[] WINDOW_SIZE = {800, 600};
     private static final String TITLE = "Minesweeper";
     private static final String MAIN_MENU_BACKGROUND = "/main_menu_background.jpg";
-    public static final String ICON_PATH = "/mine.png";
+    private static final String ICON_PATH = "/mine.png";
 
     public MainMenu() {
         controller = new Controller();
@@ -22,7 +23,7 @@ public class MainMenu extends JFrame {
 
         setTitle(TITLE);
         setIconImage(icon);
-        setSize(800, 600);
+        setSize(WINDOW_SIZE[0], WINDOW_SIZE[1]);
         setResizable(false);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -42,10 +43,13 @@ public class MainMenu extends JFrame {
         var buttonsArea = new JPanel();
         buttonsArea.setPreferredSize(new Dimension(getWidth() / 4, getHeight() / 4));
         buttonsArea.setLayout(new GridLayout(3, 1));
+
         MenuButton newGameButton = new MenuButton("New game");
         newGameButton.addActionListener(e -> startGame());
         buttonsArea.add(newGameButton);
+
         buttonsArea.add(new MenuButton("High scores"));
+
         MenuButton exitButton = new MenuButton("Exit");
         exitButton.addActionListener(e -> System.exit(0));
         buttonsArea.add(exitButton);
@@ -55,14 +59,8 @@ public class MainMenu extends JFrame {
 
     public void startGame() {
         DifficultyLevel level = DifficultyLevelDialog.choose(this);
-        if (level == DifficultyLevel.NONE) return;
-
-    }
-
-    private MenuButton createDifficultyLevelButton(String text, DifficultyLevel level) {
-        var levelButton = new MenuButton(text);
-        //TODO: addActionListener
-
-        return levelButton;
+        if (level == DifficultyLevel.NONE)
+            return;
+        controller.init(level);
     }
 }
