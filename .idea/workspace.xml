@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7ee2544-4fc4-4419-989a-8656504167c2" name="Changes" comment="[lab2] Add observer pattern implementation.">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="b7ee2544-4fc4-4419-989a-8656504167c2" name="Changes" comment="[lab2] Create enum DifficultyLevel.">
       <change afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/controller/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/controller/DifficultyLevel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/view/gui/MainMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/view/gui/components/BackgroundPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/view/gui/components/DifficultyLevelDialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/view/gui/components/MenuButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/model/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/model/Field.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/view/gui/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/view/gui/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/view/gui/components/DifficultyLevelDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/view/gui/components/DifficultyLevelDialog.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +185,35 @@
       <option name="project" value="LOCAL" />
       <updated>1682958122911</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="[lab2] Add some resources.">
+      <created>1683271220780</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1683271220781</updated>
+    </task>
+    <task id="LOCAL-00005" summary="[lab2] Add some components.">
+      <created>1683271280996</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683271280996</updated>
+    </task>
+    <task id="LOCAL-00006" summary="[lab2] Made main menu.">
+      <created>1683271365484</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1683271365484</updated>
+    </task>
+    <task id="LOCAL-00007" summary="[lab2] Create enum DifficultyLevel.">
+      <created>1683271438893</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1683271438893</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,7 +234,11 @@
     <MESSAGE value="Initial commit." />
     <MESSAGE value="[lab2] Initial commit." />
     <MESSAGE value="[lab2] Add observer pattern implementation." />
-    <option name="LAST_COMMIT_MESSAGE" value="[lab2] Add observer pattern implementation." />
+    <MESSAGE value="[lab2] Add some resources." />
+    <MESSAGE value="[lab2] Add some components." />
+    <MESSAGE value="[lab2] Made main menu." />
+    <MESSAGE value="[lab2] Create enum DifficultyLevel." />
+    <option name="LAST_COMMIT_MESSAGE" value="[lab2] Create enum DifficultyLevel." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

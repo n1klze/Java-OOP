@@ -63,7 +63,7 @@ public class Field extends Observable {
 
     private Set<Integer> generateMinePositions() {
         Set<Integer> minePositions = new HashSet<>();
-        Random randGenerator = new Random();
+        var randGenerator = new Random();
         int bound = width * height;
 
         int currentNumOfMines = 0;

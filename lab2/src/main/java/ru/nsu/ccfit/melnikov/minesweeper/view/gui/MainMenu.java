@@ -13,12 +13,12 @@ public class MainMenu extends JFrame {
     private final Controller controller;
     private static final String TITLE = "Minesweeper";
     private static final String MAIN_MENU_BACKGROUND = "/main_menu_background.jpg";
-    public static final String iconPath = "/mine.png";
+    public static final String ICON_PATH = "/mine.png";
 
     public MainMenu() {
         controller = new Controller();
         Image icon = Toolkit.getDefaultToolkit().
-                getImage(MainMenu.class.getResource(iconPath));
+                getImage(MainMenu.class.getResource(ICON_PATH));
 
         setTitle(TITLE);
         setIconImage(icon);

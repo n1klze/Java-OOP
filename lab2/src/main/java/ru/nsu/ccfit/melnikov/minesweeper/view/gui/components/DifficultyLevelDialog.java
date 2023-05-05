@@ -6,22 +6,22 @@ import javax.swing.*;
 import java.awt.*;
 
 public class DifficultyLevelDialog {
-    public static final String[] levels = {"Easy", "Medium", "Expert"};
-    public static final String iconPath = "/mine.png";
-    public static final int[] iconResolution = {96, 96};
+    public static final String[] LEVELS = {"Easy", "Medium", "Expert"};
+    public static final String ICON_PATH = "/mine.png";
+    public static final int[] ICON_RESOLUTION = {96, 96};
 
     public static DifficultyLevel choose(Component frame) {
         ImageIcon icon = new ImageIcon(
                 Toolkit.getDefaultToolkit().
-                        getImage(DifficultyLevelDialog.class.getResource(iconPath)).
-                        getScaledInstance(iconResolution[0], iconResolution[1], Image.SCALE_DEFAULT));
+                        getImage(DifficultyLevelDialog.class.getResource(ICON_PATH)).
+                        getScaledInstance(ICON_RESOLUTION[0], ICON_RESOLUTION[1], Image.SCALE_DEFAULT));
         String result = (String) JOptionPane.showInputDialog(frame,
                 "Choose difficulty level:",
                 "Difficulty selection",
                 JOptionPane.QUESTION_MESSAGE,
                 icon,
-                levels,
-                levels[0]);
+                LEVELS,
+                LEVELS[0]);
 
         if (result == null) return DifficultyLevel.NONE;
 
