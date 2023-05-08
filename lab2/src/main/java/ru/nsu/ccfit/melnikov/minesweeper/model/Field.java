@@ -1,6 +1,8 @@
 package ru.nsu.ccfit.melnikov.minesweeper.model;
 
 import ru.nsu.ccfit.melnikov.minesweeper.observer.Observable;
+import ru.nsu.ccfit.melnikov.minesweeper.observer.context.MarkedCellContext;
+import ru.nsu.ccfit.melnikov.minesweeper.observer.context.OpenedCellContext;
 
 import java.util.HashSet;
 import java.util.Random;
@@ -46,8 +48,7 @@ public class Field extends Observable {
     private void initCells() {
         for (int i = 0; i < height; ++i) {
             for (int j = 0; j < width; ++j) {
-                minefield[i][j].setValue(EMPTY);
-                minefield[i][j].setState(CellState.CLOSED);
+                minefield[i][j] = new Cell();
             }
         }
     }
@@ -56,7 +57,7 @@ public class Field extends Observable {
         Set<Integer> minePositions = generateMinePositions();
 
         for (Integer pos : minePositions) {
-            int i = pos / height;
+            int i = pos / width;
             int j = pos % width;
             mineCell(i, j);
         }
@@ -82,7 +83,7 @@ public class Field extends Observable {
         minefield[i][j].setValue(MINE);
         for (int k = -1; k <= 1; ++k) {
             for (int l = -1; l <= 1; ++l) {
-                boolean isUpdatablePos = (k != 0 && l != 0) &&
+                boolean isUpdatablePos = (k != 0 || l != 0) &&
                         (i + k >= 0 && i + k < height) &&
                         (j + l >= 0 && j + l < width) &&
                         (minefield[i + k][j + l].getValue() != MINE);
@@ -99,14 +100,19 @@ public class Field extends Observable {
         } else if (minefield[i][j].getState() == CellState.MARKED) {
             minefield[i][j].setState(CellState.CLOSED);
         }
-        //TODO: notifyObservers();
+        notifyObservers(
+                new MarkedCellContext(i, j, minefield[i][j].getState() == CellState.MARKED));
     }
 
     public void openCell(int i, int j) {
         checkCoordinates(i, j);
         if (minefield[i][j].getState() == CellState.CLOSED) {
             minefield[i][j].setState(CellState.OPENED);
-            //TODO: notifyObservers();
+            notifyObservers(
+                    new OpenedCellContext(i,
+                            j,
+                            minefield[i][j].getValue() == MINE,
+                            minefield[i][j].getValue()));
             checkGameOver(i, j);
             if (minefield[i][j].getValue() == EMPTY)
                 openNeighbours(i, j);
@@ -133,7 +139,7 @@ public class Field extends Observable {
     private void openNeighbours(int i, int j) {
         for (int k = -1; k <= 1; ++k) {
             for (int l = -1; l <= 1; ++l) {
-                boolean isRevealablePos = (k != 0 && l != 0) &&
+                boolean isRevealablePos = (k != 0 || l != 0) &&
                         (i + k >= 0 && i + k < height) &&
                         (j + l >= 0 && j + l < width) &&
                         (minefield[i + k][j + l].getValue() != MINE);

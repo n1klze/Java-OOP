@@ -3,8 +3,14 @@ package ru.nsu.ccfit.melnikov.minesweeper.model;
 public class Cell {
     private byte value;
     private CellState state;
+    private static final byte EMPTY = 0;
 
-    public int getValue() {
+    public Cell() {
+        value = EMPTY;
+        state = CellState.CLOSED;
+    }
+
+    public byte getValue() {
         return value;
     }
 
