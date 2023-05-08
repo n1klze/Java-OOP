@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7ee2544-4fc4-4419-989a-8656504167c2" name="Changes" comment="[lab2] Add custom font as resource.">
+    <list default="true" id="b7ee2544-4fc4-4419-989a-8656504167c2" name="Changes" comment="[lab2] Update controller.">
       <change afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/controller/Controller.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/observer/context/MarkedCellContext.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/observer/context/OpenedCellContext.java" afterDir="false" />
@@ -274,7 +274,8 @@
     <MESSAGE value="[lab2] Change access rules." />
     <MESSAGE value="[lab2] Add custom font." />
     <MESSAGE value="[lab2] Add custom font as resource." />
-    <option name="LAST_COMMIT_MESSAGE" value="[lab2] Add custom font as resource." />
+    <MESSAGE value="[lab2] Update controller." />
+    <option name="LAST_COMMIT_MESSAGE" value="[lab2] Update controller." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -11,7 +11,7 @@ import java.awt.*;
 
 public class MainMenu extends JFrame {
     private final Controller controller;
-    private static final int[] WINDOW_SIZE = {800, 600};
+    private static final Dimension WINDOW_SIZE = new Dimension(800, 600);
     private static final String TITLE = "Minesweeper";
     private static final String MAIN_MENU_BACKGROUND = "/main_menu_background.jpg";
     private static final String ICON_PATH = "/mine.png";
@@ -23,7 +23,7 @@ public class MainMenu extends JFrame {
 
         setTitle(TITLE);
         setIconImage(icon);
-        setSize(WINDOW_SIZE[0], WINDOW_SIZE[1]);
+        setSize(WINDOW_SIZE);
         setResizable(false);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
