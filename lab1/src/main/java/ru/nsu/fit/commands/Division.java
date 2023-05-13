@@ -11,14 +11,24 @@ public class Division implements Command {
      *
      * @param args             command arguments
      * @param executionContext contains stack of values and named parameters list.
-     * @throws StackSizeException if not enough elements in the stack.
+     * @throws StackSizeException  if not enough elements in the stack.
+     * @throws ArithmeticException if divide by zero.
      */
     @Override
-    public void exec(String[] args, Context executionContext) throws StackSizeException {
+    public void exec(String[] args, Context executionContext) throws StackSizeException, ArithmeticException {
         Deque<Double> stack = executionContext.getStack();
 
         if (stack.size() < 2) throw new StackSizeException();
 
-        stack.push(stack.pop() / stack.pop());
+        var numerator   = stack.pop();
+        var denominator = stack.pop();
+
+        if (denominator == 0) {
+            stack.push(denominator);
+            stack.push(numerator);
+            throw new ArithmeticException("Division by zero.");
+        }
+
+        stack.push(numerator / denominator);
     }
 }

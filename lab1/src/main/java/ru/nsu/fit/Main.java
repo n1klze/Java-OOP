@@ -58,7 +58,7 @@ public class Main {
                     Command command = commandFactory.create(arguments[0]);
                     command.exec(arguments, executionContext);
                     LOGGER.log(Level.FINEST, "Command completed successfully.");
-                } catch (CommandCreationException | ArgumentException except) {
+                } catch (CommandCreationException | ArgumentException | RuntimeException except) {
                     LOGGER.log(Level.WARNING, except.getMessage());
                 }
             }

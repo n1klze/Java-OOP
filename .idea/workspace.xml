@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7ee2544-4fc4-4419-989a-8656504167c2" name="Changes" comment="Initial commit.">
+      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/logs/logger.log" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/logs/logger.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/commands/Define.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/commands/Define.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/commands/Division.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/commands/Division.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/commands/Sqrt.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab1/src/main/java/ru/nsu/fit/commands/Sqrt.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +44,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "17",
     "node.js.detected.package.eslint": "true",
@@ -48,7 +54,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "coverage",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -85,7 +91,6 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
     <recent_temporary>

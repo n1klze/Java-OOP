@@ -25,7 +25,11 @@ public class Define implements Command {
         try {
             if (Pattern.compile("-?\\d+(\\.\\d+)?").matcher(args[1]).matches())
                 throw new ArgumentFormatException("First argument cannot be a numeric: " + args[1]);
-            namedParameters.put(args[1], Double.valueOf(args[2]));
+            if (namedParameters.containsKey(args[2])) {
+                namedParameters.put(args[1], namedParameters.get(args[2]));
+            } else {
+                namedParameters.put(args[1], Double.valueOf(args[2]));
+            }
         } catch (NumberFormatException except) {
             throw new ArgumentFormatException("Bad format of second argument: " + args[2]);
         }
