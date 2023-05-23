@@ -62,5 +62,6 @@ public class MainMenu extends JFrame {
         if (level == DifficultyLevel.NONE)
             return;
         controller.init(level);
+        this.dispose();
     }
 }

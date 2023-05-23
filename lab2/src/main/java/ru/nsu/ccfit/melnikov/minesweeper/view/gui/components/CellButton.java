@@ -31,13 +31,10 @@ public class CellButton extends JButton {
     public int getJ() {return j;}
 
     static {
-        MINE_ICON = Toolkit.getDefaultToolkit().
-                getImage(CellButton.class.getResource(MINE_ICON_PATH));
-        FLAG_ICON = Toolkit.getDefaultToolkit().
-                getImage(CellButton.class.getResource(FLAG_ICON_PATH));
+        MINE_ICON = Toolkit.getDefaultToolkit().getImage(CellButton.class.getResource(MINE_ICON_PATH));
+        FLAG_ICON = Toolkit.getDefaultToolkit().getImage(CellButton.class.getResource(FLAG_ICON_PATH));
         try {
-            FONT = Font.createFont(Font.TRUETYPE_FONT,
-                    CellButton.class.getResourceAsStream(FONT_PATH));
+            FONT = Font.createFont(Font.TRUETYPE_FONT, CellButton.class.getResourceAsStream(FONT_PATH));
         } catch (FontFormatException | IOException e) {
             throw new RuntimeException(e);
         }

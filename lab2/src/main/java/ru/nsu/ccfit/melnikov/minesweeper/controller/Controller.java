@@ -9,6 +9,7 @@ import java.util.Map;
 
 public class Controller {
     private Field gamefield;
+    private boolean isWin;
     private static final Map<DifficultyLevel, int[]> difficultyLevelParameters = new HashMap<>();
 
     static {
@@ -31,12 +32,28 @@ public class Controller {
         gamefield.markCell(i, j);
     }
 
+    public void setIsWin(boolean win) {
+        isWin = win;
+    }
+
+    public boolean getIsWin() {
+        return isWin;
+    }
+
     public int getHeight() {
         return gamefield.getHeight();
     }
 
     public int getWidth(){
         return gamefield.getWidth();
+    }
+
+    public Integer getNumOfMines() {
+        return gamefield.getNumOfMines();
+    }
+
+    public Integer getNumOfMarkedCells() {
+        return gamefield.getNumOfMarkedCells();
     }
 
     public void registerObserver(Observer obs) {

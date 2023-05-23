@@ -1,6 +1,7 @@
 package ru.nsu.ccfit.melnikov.minesweeper.model;
 
 import ru.nsu.ccfit.melnikov.minesweeper.observer.Observable;
+import ru.nsu.ccfit.melnikov.minesweeper.observer.context.GameOverContext;
 import ru.nsu.ccfit.melnikov.minesweeper.observer.context.MarkedCellContext;
 import ru.nsu.ccfit.melnikov.minesweeper.observer.context.OpenedCellContext;
 
@@ -15,6 +16,8 @@ public class Field extends Observable {
     private final int width;
     private final int numOfMines;
     private final Cell[][] minefield;
+    private int numOfMarkedCells = 0;
+    private int numOfOpenedCells = 0;
     private boolean isGameStarted = false;
     private boolean isGameOver = false;
 
@@ -28,6 +31,14 @@ public class Field extends Observable {
 
     public int getNumOfMines() {
         return numOfMines;
+    }
+
+    public int getNumOfMarkedCells() {
+        return numOfMarkedCells;
+    }
+
+    public int getNumOfOpenedCells() {
+        return numOfOpenedCells;
     }
 
     public Field(int height, int width, int numOfMines) {
@@ -94,17 +105,21 @@ public class Field extends Observable {
     }
 
     public void markCell(int i, int j) {
+        if (isGameOver) return;
         checkCoordinates(i, j);
         if (minefield[i][j].getState() == CellState.CLOSED) {
             minefield[i][j].setState(CellState.MARKED);
+            ++numOfMarkedCells;
         } else if (minefield[i][j].getState() == CellState.MARKED) {
             minefield[i][j].setState(CellState.CLOSED);
+            --numOfMarkedCells;
         }
         notifyObservers(
                 new MarkedCellContext(i, j, minefield[i][j].getState() == CellState.MARKED));
     }
 
     public void openCell(int i, int j) {
+        if (isGameOver) return;
         checkCoordinates(i, j);
         if (minefield[i][j].getState() == CellState.CLOSED) {
             minefield[i][j].setState(CellState.OPENED);
@@ -113,6 +128,7 @@ public class Field extends Observable {
                             j,
                             minefield[i][j].getValue() == MINE,
                             minefield[i][j].getValue()));
+            ++numOfOpenedCells;
             checkGameOver(i, j);
             if (minefield[i][j].getValue() == EMPTY)
                 openNeighbours(i, j);
@@ -120,10 +136,12 @@ public class Field extends Observable {
     }
 
     private void checkGameOver(int i, int j) {
-        if (!isGameOver && minefield[i][j].getValue() == MINE) {
+        boolean areAllCellsOpened = (numOfOpenedCells == width * height - numOfMines);
+
+        if (!isGameOver && (minefield[i][j].getValue() == MINE || areAllCellsOpened)) {
             isGameOver = true;
             revealAllMines();
-            //TODO: notifyObservers();
+            notifyObservers(new GameOverContext(areAllCellsOpened));
         }
     }
 
