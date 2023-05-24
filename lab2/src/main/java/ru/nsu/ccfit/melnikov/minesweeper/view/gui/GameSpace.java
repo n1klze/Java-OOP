@@ -3,10 +3,7 @@ package ru.nsu.ccfit.melnikov.minesweeper.view.gui;
 import ru.nsu.ccfit.melnikov.minesweeper.controller.Controller;
 import ru.nsu.ccfit.melnikov.minesweeper.controller.DifficultyLevel;
 import ru.nsu.ccfit.melnikov.minesweeper.observer.Observer;
-import ru.nsu.ccfit.melnikov.minesweeper.observer.context.Context;
-import ru.nsu.ccfit.melnikov.minesweeper.observer.context.GameOverContext;
-import ru.nsu.ccfit.melnikov.minesweeper.observer.context.MarkedCellContext;
-import ru.nsu.ccfit.melnikov.minesweeper.observer.context.OpenedCellContext;
+import ru.nsu.ccfit.melnikov.minesweeper.observer.context.*;
 import ru.nsu.ccfit.melnikov.minesweeper.view.gui.components.CellButton;
 import ru.nsu.ccfit.melnikov.minesweeper.view.gui.components.DifficultyLevelDialog;
 import ru.nsu.ccfit.melnikov.minesweeper.view.gui.components.MenuButton;
@@ -22,13 +19,14 @@ import static java.lang.Math.min;
 
 public class GameSpace extends JFrame implements Observer {
     private final Controller controller;
-    private CellButton[][] cellsField;
+    private final CellButton[][] cellsField;
     private final JLabel minesCounter = new JLabel();
+    private final JLabel gameTimer = new JLabel();
     private static final String TITLE = "Minesweeper";
     private static final String ICON_PATH = "/mine.png";
+    private static final String TIMER_ICON_PATH = "/timer.png";
     private static final String FONT_PATH = "/font.ttf";
     private static final Dimension ICON_RESOLUTION = new Dimension(64, 64);
-    private static final Dimension WINDOW_SIZE = new Dimension(800, 600);
 
     public GameSpace(Controller controller) {
         this.controller = controller;
@@ -51,14 +49,14 @@ public class GameSpace extends JFrame implements Observer {
 
         setTitle(TITLE);
         setIconImage(icon);
-        //setSize(WINDOW_SIZE);
-        calculateSize(statusPanel);
+        calculateSize(statusPanel, menuBar);
         setResizable(true);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         add(statusPanel, BorderLayout.SOUTH);
         add(fieldPanel);
         setVisible(true);
+        controller.runTimer();
     }
 
     private void restartGame() {
@@ -84,6 +82,27 @@ public class GameSpace extends JFrame implements Observer {
     private JLabel initMinesCounter() {
         ImageIcon icon = new ImageIcon(
                 Toolkit.getDefaultToolkit().
+                        getImage(getClass().getResource(TIMER_ICON_PATH)).
+                        getScaledInstance(ICON_RESOLUTION.width, ICON_RESOLUTION.height, Image.SCALE_DEFAULT));
+        Font font;
+        try {
+            font = Font.createFont(Font.TRUETYPE_FONT, getClass().getResourceAsStream(FONT_PATH));
+        } catch (FontFormatException | IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        gameTimer.setIcon(icon);
+        //gameTimer.setText("00:00:00");
+        gameTimer.setFont(font.deriveFont(min((float) ICON_RESOLUTION.width, (float) ICON_RESOLUTION.height) * 3 / 4));
+        gameTimer.setHorizontalAlignment(SwingConstants.CENTER);
+        gameTimer.setVerticalAlignment(SwingConstants.CENTER);
+
+        return gameTimer;
+    }
+
+    private JLabel initGameTimer() {
+        ImageIcon icon = new ImageIcon(
+                Toolkit.getDefaultToolkit().
                         getImage(getClass().getResource(ICON_PATH)).
                         getScaledInstance(ICON_RESOLUTION.width, ICON_RESOLUTION.height, Image.SCALE_DEFAULT));
         Font font;
@@ -106,6 +125,7 @@ public class GameSpace extends JFrame implements Observer {
         statusPanel.setLayout(new GridLayout(1, 2));
         //statusPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 
+        statusPanel.add(initGameTimer());
         statusPanel.add(initMinesCounter());
     }
 
@@ -119,15 +139,15 @@ public class GameSpace extends JFrame implements Observer {
         }
     }
 
-    private void calculateSize(JPanel statusPanel) {
+    private void calculateSize(JPanel statusPanel, JMenuBar menuBar) {
         Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
         int cellSize = min(size.width * 3 / 4 / controller.getWidth(),
                 size.height * 3 / 4 / controller.getHeight());
 
-        int fieldPanelHeight = cellSize * controller.getHeight();
         int fieldPanelWidth = cellSize * controller.getWidth();
+        int fieldPanelHeight = cellSize * controller.getHeight();
 
-        size = new Dimension(fieldPanelWidth, fieldPanelHeight + statusPanel.getHeight());
+        size = new Dimension(fieldPanelWidth, fieldPanelHeight + statusPanel.getHeight() + menuBar.getHeight());
         setSize(size);
     }
 
@@ -146,21 +166,23 @@ public class GameSpace extends JFrame implements Observer {
 
     @Override
     public void update(Context context) {
-        if (context instanceof MarkedCellContext) {
-            var ctx = (MarkedCellContext) context;
+        if (context instanceof MarkedCellContext ctx) {
             var cell = cellsField[ctx.getI()][ctx.getJ()];
             cell.mark(ctx.isMarked());
             minesCounter.setText(((Integer) (controller.getNumOfMines() - controller.getNumOfMarkedCells())).toString());
-        } else if (context instanceof OpenedCellContext) {
-            var ctx = (OpenedCellContext) context;
+        } else if (context instanceof OpenedCellContext ctx) {
             var cell = cellsField[ctx.getI()][ctx.getJ()];
             cell.open(ctx.getNumOfMinedNeighbours(), ctx.isMined());
-        } else if (context instanceof GameOverContext) {
-            controller.setIsWin(((GameOverContext) context).isWin());
-            if (!controller.getIsWin()) {
-                JOptionPane.showMessageDialog(this, "<html><h2>Game over!</h2><i>Try again!</i>");
-            } else {
+        } else if (context instanceof GameTimerContext ctx) {
+            gameTimer.setText(ctx.toString());
+        } else if (context instanceof GameOverContext ctx) {
+            controller.stopTimer();
+            controller.setIsWin(ctx.isWin());
+            if (controller.getIsWin()) {
+                minesCounter.setText("0");
                 JOptionPane.showMessageDialog(this, "<html><h2>You win!</h2><i>Good job!</i>");
+            } else {
+                JOptionPane.showMessageDialog(this, "<html><h2>Game over!</h2><i>Try again!</i>");
             }
         }
     }

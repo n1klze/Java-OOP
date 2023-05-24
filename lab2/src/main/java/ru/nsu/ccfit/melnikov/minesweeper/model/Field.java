@@ -148,8 +148,14 @@ public class Field extends Observable {
     private void revealAllMines() {
         for (int i = 0; i < height; ++i) {
             for (int j = 0; j < width; ++j) {
-                if (minefield[i][j].getValue() == MINE)
-                    openCell(i, j);
+                if (minefield[i][j].getValue() == MINE) {
+                    minefield[i][j].setState(CellState.OPENED);
+                    notifyObservers(
+                            new OpenedCellContext(i,
+                                    j,
+                                    minefield[i][j].getValue() == MINE,
+                                    minefield[i][j].getValue()));
+                }
             }
         }
     }

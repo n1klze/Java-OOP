@@ -1,6 +1,7 @@
 package ru.nsu.ccfit.melnikov.minesweeper.controller;
 
 import ru.nsu.ccfit.melnikov.minesweeper.model.Field;
+import ru.nsu.ccfit.melnikov.minesweeper.model.GameTimer;
 import ru.nsu.ccfit.melnikov.minesweeper.observer.Observer;
 import ru.nsu.ccfit.melnikov.minesweeper.view.gui.GameSpace;
 
@@ -9,6 +10,7 @@ import java.util.Map;
 
 public class Controller {
     private Field gamefield;
+    private final GameTimer timer = new GameTimer();
     private boolean isWin;
     private static final Map<DifficultyLevel, int[]> difficultyLevelParameters = new HashMap<>();
 
@@ -56,7 +58,16 @@ public class Controller {
         return gamefield.getNumOfMarkedCells();
     }
 
+    public void runTimer() {
+        timer.run();
+    }
+
+    public void stopTimer() {
+        timer.stop();
+    }
+
     public void registerObserver(Observer obs) {
         gamefield.registerObserver(obs);
+        timer.registerObserver(obs);
     }
 }
