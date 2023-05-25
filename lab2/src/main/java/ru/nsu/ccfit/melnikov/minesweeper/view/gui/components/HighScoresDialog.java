@@ -3,7 +3,6 @@ package ru.nsu.ccfit.melnikov.minesweeper.view.gui.components;
 import ru.nsu.ccfit.melnikov.minesweeper.controller.Controller;
 import ru.nsu.ccfit.melnikov.minesweeper.controller.DifficultyLevel;
 import ru.nsu.ccfit.melnikov.minesweeper.model.GameTimer;
-import ru.nsu.ccfit.melnikov.minesweeper.model.score.Score;
 
 import javax.swing.*;
 import java.awt.*;
