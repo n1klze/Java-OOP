@@ -23,7 +23,8 @@ public class GameSpace extends JFrame implements Observer {
     private final JLabel minesCounter = new JLabel();
     private final JLabel gameTimer = new JLabel();
     private static final String TITLE = "Minesweeper";
-    private static final String ICON_PATH = "/mine.png";
+    private static final String ICON_PATH = "/mine_scaled.png";
+    private static final String MINE_ICON = "/mine.png";
     private static final String TIMER_ICON_PATH = "/timer.png";
     private static final String FONT_PATH = "/font.ttf";
     private static final Dimension ICON_RESOLUTION = new Dimension(64, 64);
@@ -91,7 +92,7 @@ public class GameSpace extends JFrame implements Observer {
         return highScoresMenu;
     }
 
-    private JLabel initMinesCounter() {
+    private JLabel initGameTimer() {
         ImageIcon icon = new ImageIcon(
                 Toolkit.getDefaultToolkit().
                         getImage(getClass().getResource(TIMER_ICON_PATH)).
@@ -104,7 +105,6 @@ public class GameSpace extends JFrame implements Observer {
         }
 
         gameTimer.setIcon(icon);
-        //gameTimer.setText("00:00:00");
         gameTimer.setFont(font.deriveFont(min((float) ICON_RESOLUTION.width, (float) ICON_RESOLUTION.height) * 3 / 4));
         gameTimer.setHorizontalAlignment(SwingConstants.CENTER);
         gameTimer.setVerticalAlignment(SwingConstants.CENTER);
@@ -112,10 +112,10 @@ public class GameSpace extends JFrame implements Observer {
         return gameTimer;
     }
 
-    private JLabel initGameTimer() {
+    private JLabel initMinesCounter() {
         ImageIcon icon = new ImageIcon(
                 Toolkit.getDefaultToolkit().
-                        getImage(getClass().getResource(ICON_PATH)).
+                        getImage(getClass().getResource(MINE_ICON)).
                         getScaledInstance(ICON_RESOLUTION.width, ICON_RESOLUTION.height, Image.SCALE_DEFAULT));
         Font font;
         try {
@@ -135,10 +135,9 @@ public class GameSpace extends JFrame implements Observer {
 
     private void initStatusPanel(JPanel statusPanel) {
         statusPanel.setLayout(new GridLayout(1, 2));
-        //statusPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 
-        statusPanel.add(initGameTimer());
         statusPanel.add(initMinesCounter());
+        statusPanel.add(initGameTimer());
     }
 
     private void initCells(JPanel fieldPanel) {

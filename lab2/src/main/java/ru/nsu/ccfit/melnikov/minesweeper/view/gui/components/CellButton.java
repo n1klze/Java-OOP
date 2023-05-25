@@ -17,7 +17,7 @@ public class CellButton extends JButton {
             Color.BLACK};
     private static final Color CLOSED_CELL_COLOR = Color.BLUE;
     private static final Color OPENED_CELL_COLOR = Color.LIGHT_GRAY;
-    private static final String MINE_ICON_PATH = "/mine.png";
+    private static final String MINE_ICON_PATH = "/mine_scaled.png";
     private static final String FLAG_ICON_PATH = "/flag.png";
     private static final String FONT_PATH = "/font.ttf";
     private static final Font FONT;

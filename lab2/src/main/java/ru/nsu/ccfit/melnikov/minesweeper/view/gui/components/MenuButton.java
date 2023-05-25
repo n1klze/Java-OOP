@@ -25,11 +25,8 @@ public class MenuButton extends JButton {
 
         setText(text);
         setFont(FONT);
-        //super.setContentAreaFilled(false);
         setFocusPainted(false);
         setBackground(Color.CYAN);
         setBorder(new LineBorder(Color.DARK_GRAY, 1));
-        //setFont(new Font(Font.DIALOG, Font.BOLD, FONT_SIZE));
-        //setForeground(Color.WHITE);
     }
 }

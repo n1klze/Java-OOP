@@ -15,7 +15,7 @@ public class MainMenu extends JFrame {
     private static final Dimension WINDOW_SIZE = new Dimension(800, 600);
     private static final String TITLE = "Minesweeper";
     private static final String MAIN_MENU_BACKGROUND = "/main_menu_background.jpg";
-    private static final String ICON_PATH = "/mine.png";
+    private static final String ICON_PATH = "/mine_scaled.png";
 
     public MainMenu() {
         controller = new Controller();

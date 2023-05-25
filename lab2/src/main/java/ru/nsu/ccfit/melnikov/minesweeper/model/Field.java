@@ -18,7 +18,6 @@ public class Field extends Observable {
     private final Cell[][] minefield;
     private int numOfMarkedCells = 0;
     private int numOfOpenedCells = 0;
-    private boolean isGameStarted = false;
     private boolean isGameOver = false;
 
     public int getHeight() {
@@ -35,10 +34,6 @@ public class Field extends Observable {
 
     public int getNumOfMarkedCells() {
         return numOfMarkedCells;
-    }
-
-    public int getNumOfOpenedCells() {
-        return numOfOpenedCells;
     }
 
     public Field(int height, int width, int numOfMines) {
