@@ -28,11 +28,17 @@ public class GameTimer extends Observable {
         timer.scheduleAtFixedRate(new GameTimerTask(), 0, 1000);
     }
 
-    public void stop() {
-        if (!isRunning) return;
+    public int stop() {
+        if (!isRunning) return -1;
 
         isRunning = false;
         timer.cancel();
         timer.purge();
+
+        return seconds;
+    }
+
+    public static String toString(int seconds) {
+        return String.format("%d:%02d:%02d", seconds / 3600, seconds / 60 % 60, seconds % 60);
     }
 }

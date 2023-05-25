@@ -2,14 +2,13 @@ package ru.nsu.ccfit.melnikov.minesweeper.view.gui;
 
 import ru.nsu.ccfit.melnikov.minesweeper.controller.Controller;
 import ru.nsu.ccfit.melnikov.minesweeper.controller.DifficultyLevel;
+import ru.nsu.ccfit.melnikov.minesweeper.model.score.Score;
 import ru.nsu.ccfit.melnikov.minesweeper.observer.Observer;
 import ru.nsu.ccfit.melnikov.minesweeper.observer.context.*;
 import ru.nsu.ccfit.melnikov.minesweeper.view.gui.components.CellButton;
 import ru.nsu.ccfit.melnikov.minesweeper.view.gui.components.DifficultyLevelDialog;
-import ru.nsu.ccfit.melnikov.minesweeper.view.gui.components.MenuButton;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -176,10 +175,12 @@ public class GameSpace extends JFrame implements Observer {
         } else if (context instanceof GameTimerContext ctx) {
             gameTimer.setText(ctx.toString());
         } else if (context instanceof GameOverContext ctx) {
-            controller.stopTimer();
+            var time = controller.stopTimer();
             controller.setIsWin(ctx.isWin());
             if (controller.getIsWin()) {
                 minesCounter.setText("0");
+                var result = new Score(controller.getDifficulty(), time);
+                controller.saveScore(result);
                 JOptionPane.showMessageDialog(this, "<html><h2>You win!</h2><i>Good job!</i>");
             } else {
                 JOptionPane.showMessageDialog(this, "<html><h2>Game over!</h2><i>Try again!</i>");
