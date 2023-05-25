@@ -39,6 +39,6 @@ public class GameTimer extends Observable {
     }
 
     public static String toString(int seconds) {
-        return String.format("%d:%02d:%02d", seconds / 3600, seconds / 60 % 60, seconds % 60);
+        return String.format("%02d:%02d:%02d", seconds / 3600, seconds / 60 % 60, seconds % 60);
     }
 }

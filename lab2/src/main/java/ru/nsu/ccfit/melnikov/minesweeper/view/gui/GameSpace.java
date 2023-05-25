@@ -7,6 +7,7 @@ import ru.nsu.ccfit.melnikov.minesweeper.observer.Observer;
 import ru.nsu.ccfit.melnikov.minesweeper.observer.context.*;
 import ru.nsu.ccfit.melnikov.minesweeper.view.gui.components.CellButton;
 import ru.nsu.ccfit.melnikov.minesweeper.view.gui.components.DifficultyLevelDialog;
+import ru.nsu.ccfit.melnikov.minesweeper.view.gui.components.HighScoresDialog;
 
 import javax.swing.*;
 import java.awt.*;
@@ -43,7 +44,7 @@ public class GameSpace extends JFrame implements Observer {
 
         var menuBar = new JMenuBar();
         menuBar.add(initNewGameMenu());
-        menuBar.add(new JMenu("Scores"));
+        menuBar.add(initHighScoresMenu());
         setJMenuBar(menuBar);
 
         setTitle(TITLE);
@@ -76,6 +77,18 @@ public class GameSpace extends JFrame implements Observer {
         });
 
         return newGameMenu;
+    }
+
+    private JMenu initHighScoresMenu() {
+        var highScoresMenu = new JMenu("Scores");
+        var parent = this;
+        highScoresMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                new HighScoresDialog(parent, controller);
+            }
+        });
+
+        return highScoresMenu;
     }
 
     private JLabel initMinesCounter() {

@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7ee2544-4fc4-4419-989a-8656504167c2" name="Changes" comment="[lab2] Add game timer.">
-      <change afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/model/score/Score.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/model/score/ScoreHandler.java" afterDir="false" />
+    <list default="true" id="b7ee2544-4fc4-4419-989a-8656504167c2" name="Changes" comment="[lab2] Add game high scores support. Now how score can export to json.">
       <change afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/view/gui/components/HighScoresDialog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab2/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/model/GameTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/model/GameTimer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/observer/context/GameTimerContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/observer/context/GameTimerContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/view/gui/GameSpace.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/view/gui/GameSpace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/view/gui/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/src/main/java/ru/nsu/ccfit/melnikov/minesweeper/view/gui/MainMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +164,7 @@
       <workItem from="1677935733957" duration="298000" />
       <workItem from="1684574922742" duration="19753000" />
       <workItem from="1684873212105" duration="655000" />
-      <workItem from="1684911539712" duration="26428000" />
+      <workItem from="1684911539712" duration="27392000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1675495847312</created>
@@ -261,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684924599004</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="[lab2] Add game high scores support. Now how score can export to json.">
+      <created>1685025007040</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1685025007040</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,7 +296,8 @@
     <MESSAGE value="[lab2] Update controller." />
     <MESSAGE value="[lab2] Add some fixes.&#10;1. Add mines counter.&#10;2. Add game over menu.&#10;3. Add new game menu in gamespace." />
     <MESSAGE value="[lab2] Add game timer." />
-    <option name="LAST_COMMIT_MESSAGE" value="[lab2] Add game timer." />
+    <MESSAGE value="[lab2] Add game high scores support. Now how score can export to json." />
+    <option name="LAST_COMMIT_MESSAGE" value="[lab2] Add game high scores support. Now how score can export to json." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

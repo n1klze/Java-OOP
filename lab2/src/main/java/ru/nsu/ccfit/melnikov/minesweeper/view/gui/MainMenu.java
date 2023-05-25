@@ -4,6 +4,7 @@ import ru.nsu.ccfit.melnikov.minesweeper.controller.Controller;
 import ru.nsu.ccfit.melnikov.minesweeper.controller.DifficultyLevel;
 import ru.nsu.ccfit.melnikov.minesweeper.view.gui.components.BackgroundPanel;
 import ru.nsu.ccfit.melnikov.minesweeper.view.gui.components.DifficultyLevelDialog;
+import ru.nsu.ccfit.melnikov.minesweeper.view.gui.components.HighScoresDialog;
 import ru.nsu.ccfit.melnikov.minesweeper.view.gui.components.MenuButton;
 
 import javax.swing.*;
@@ -44,13 +45,15 @@ public class MainMenu extends JFrame {
         buttonsArea.setPreferredSize(new Dimension(getWidth() / 4, getHeight() / 4));
         buttonsArea.setLayout(new GridLayout(3, 1));
 
-        MenuButton newGameButton = new MenuButton("New game");
+        var newGameButton = new MenuButton("New game");
         newGameButton.addActionListener(e -> startGame());
         buttonsArea.add(newGameButton);
 
-        buttonsArea.add(new MenuButton("High scores"));
+        var highScoresButton = new MenuButton("High scores");
+        highScoresButton.addActionListener(e -> new HighScoresDialog(this, controller));
+        buttonsArea.add(highScoresButton);
 
-        MenuButton exitButton = new MenuButton("Exit");
+        var exitButton = new MenuButton("Exit");
         exitButton.addActionListener(e -> System.exit(0));
         buttonsArea.add(exitButton);
 
