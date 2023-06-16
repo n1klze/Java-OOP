@@ -17,7 +17,7 @@ public class MainMenu extends JFrame {
     private static final String MAIN_MENU_BACKGROUND = "/main_menu_background.jpg";
     private static final String ICON_PATH = "/mine_scaled.png";
 
-    public void start() {
+    public void exec() {
         controller = new Controller();
         Image icon = Toolkit.getDefaultToolkit().
                 getImage(MainMenu.class.getResource(ICON_PATH));
