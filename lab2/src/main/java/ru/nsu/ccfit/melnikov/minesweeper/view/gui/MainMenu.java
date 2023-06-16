@@ -11,13 +11,13 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MainMenu extends JFrame {
-    private final Controller controller;
+    private Controller controller;
     private static final Dimension WINDOW_SIZE = new Dimension(800, 600);
     private static final String TITLE = "Minesweeper";
     private static final String MAIN_MENU_BACKGROUND = "/main_menu_background.jpg";
     private static final String ICON_PATH = "/mine_scaled.png";
 
-    public MainMenu() {
+    public void start() {
         controller = new Controller();
         Image icon = Toolkit.getDefaultToolkit().
                 getImage(MainMenu.class.getResource(ICON_PATH));

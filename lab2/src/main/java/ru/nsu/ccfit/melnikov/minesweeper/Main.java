@@ -4,6 +4,7 @@ import ru.nsu.ccfit.melnikov.minesweeper.view.gui.MainMenu;
 
 public class Main {
     public static void main(String[] args) {
-        new MainMenu();
+        var mainMenu = new MainMenu();
+        mainMenu.start();
     }
 }
