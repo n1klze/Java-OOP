@@ -5,9 +5,7 @@ import ru.nsu.ccfit.melnikov.minesweeper.observer.context.GameOverContext;
 import ru.nsu.ccfit.melnikov.minesweeper.observer.context.MarkedCellContext;
 import ru.nsu.ccfit.melnikov.minesweeper.observer.context.OpenedCellContext;
 
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 public class Field extends Observable {
     private static final byte MINE = -1;
@@ -18,6 +16,7 @@ public class Field extends Observable {
     private final Cell[][] minefield;
     private int numOfMarkedCells = 0;
     private int numOfOpenedCells = 0;
+    private boolean isFirstMove = true;
     private boolean isGameOver = false;
 
     public int getHeight() {
@@ -48,7 +47,6 @@ public class Field extends Observable {
         this.numOfMines = numOfMines;
         this.minefield = new Cell[height][width];
         initCells();
-        placeMines();
     }
 
     private void initCells() {
@@ -59,8 +57,8 @@ public class Field extends Observable {
         }
     }
 
-    private void placeMines() {
-        Set<Integer> minePositions = generateMinePositions();
+    private void placeMines(int except_i, int except_j) {
+        Set<Integer> minePositions = generateMinePositions(except_i, except_j);
 
         for (Integer pos : minePositions) {
             int i = pos / width;
@@ -69,7 +67,7 @@ public class Field extends Observable {
         }
     }
 
-    private Set<Integer> generateMinePositions() {
+    private Set<Integer> generateMinePositions(int except_i, int except_j) {
         Set<Integer> minePositions = new HashSet<>();
         var randGenerator = new Random();
         int bound = width * height;
@@ -77,7 +75,7 @@ public class Field extends Observable {
         int currentNumOfMines = 0;
         while (currentNumOfMines != numOfMines) {
             int value = randGenerator.nextInt(bound);
-            if (minePositions.contains(value))
+            if (minePositions.contains(value) || (value == except_i * width + except_j))
                 continue;
             minePositions.add(value);
             ++currentNumOfMines;
@@ -114,6 +112,10 @@ public class Field extends Observable {
     }
 
     public void openCell(int i, int j) {
+        if (isFirstMove) {
+            placeMines(i, j);
+            isFirstMove = false;
+        }
         if (isGameOver) return;
         checkCoordinates(i, j);
         if (minefield[i][j].getState() == CellState.CLOSED) {
@@ -136,7 +138,7 @@ public class Field extends Observable {
         if (!isGameOver && (minefield[i][j].getValue() == MINE || areAllCellsOpened)) {
             isGameOver = true;
             revealAllMines();
-            notifyObservers(new GameOverContext(areAllCellsOpened));
+            notifyObservers(new GameOverContext(areAllCellsOpened, i, j));
         }
     }
 

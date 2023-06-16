@@ -199,6 +199,7 @@ public class GameSpace extends JFrame implements Observer {
                 controller.saveScore(result);
                 JOptionPane.showMessageDialog(this, "<html><h2>You win!</h2><i>Good job!</i>");
             } else {
+                cellsField[ctx.getExplodedI()][ctx.getExplodedJ()].setBackground(Color.RED);
                 JOptionPane.showMessageDialog(this, "<html><h2>Game over!</h2><i>Try again!</i>");
             }
         }
