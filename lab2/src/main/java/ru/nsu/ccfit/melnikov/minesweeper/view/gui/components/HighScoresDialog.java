@@ -36,6 +36,9 @@ public class HighScoresDialog extends JDialog {
         setSize(WINDOW_SIZE);
         setLocationRelativeTo(null);
         add(new JScrollPane(createTextArea()));
+    }
+
+    public void display() {
         setVisible(true);
     }
 

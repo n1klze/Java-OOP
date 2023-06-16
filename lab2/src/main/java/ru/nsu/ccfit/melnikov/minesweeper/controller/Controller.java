@@ -27,7 +27,8 @@ public class Controller {
         difficulty = level;
         int[] levelParameters = difficultyLevelParameters.get(level);
         gamefield = new Field(levelParameters[0], levelParameters[1], levelParameters[2]);
-        new GameSpace(this);
+        var gameSpace = new GameSpace(this);
+        gameSpace.display();
     }
 
     public void openCell(int i, int j) {

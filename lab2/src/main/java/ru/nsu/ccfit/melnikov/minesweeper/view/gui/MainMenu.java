@@ -31,7 +31,7 @@ public class MainMenu extends JFrame {
         setContentPane(createContentPane());
     }
 
-    public void exec() {
+    public void display() {
         setVisible(true);
     }
 
@@ -53,7 +53,10 @@ public class MainMenu extends JFrame {
         buttonsArea.add(newGameButton);
 
         var highScoresButton = new MenuButton("High scores");
-        highScoresButton.addActionListener(e -> new HighScoresDialog(this, controller));
+        highScoresButton.addActionListener(e -> {
+            var scores = new HighScoresDialog(this, controller);
+            scores.display();
+        });
         buttonsArea.add(highScoresButton);
 
         var exitButton = new MenuButton("Exit");

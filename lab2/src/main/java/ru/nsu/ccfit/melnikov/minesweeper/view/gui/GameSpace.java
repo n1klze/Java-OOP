@@ -56,6 +56,9 @@ public class GameSpace extends JFrame implements Observer {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         add(statusPanel, BorderLayout.SOUTH);
         add(fieldPanel);
+    }
+
+    public void display() {
         setVisible(true);
         controller.runTimer();
     }
@@ -85,7 +88,8 @@ public class GameSpace extends JFrame implements Observer {
         var parent = this;
         highScoresMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                new HighScoresDialog(parent, controller);
+                var scores = new HighScoresDialog(parent, controller);
+                scores.display();
             }
         });
 
