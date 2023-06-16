@@ -1,0 +1,13 @@
+[2023-05-13 13:57:33] [CONFIG ] Logger was successfully configured. 
+[2023-05-13 13:57:33] [INFO   ] Launch calculator application. 
+[2023-05-13 13:57:33] [INFO   ] Parsing command line. 
+[2023-05-13 13:57:33] [INFO   ] Create context. 
+[2023-05-13 13:57:33] [INFO   ] Start executing commands. 
+[2023-05-13 13:57:38] [INFO   ] Run [DEFINE, A, -1] command. 
+[2023-05-13 13:57:38] [FINEST ] Command completed successfully. 
+[2023-05-13 13:57:44] [INFO   ] Run [DEFINE, N, A] command. 
+[2023-05-13 13:57:44] [FINEST ] Command completed successfully. 
+[2023-05-13 13:57:46] [INFO   ] Run [PUSH, N] command. 
+[2023-05-13 13:57:46] [FINEST ] Command completed successfully. 
+[2023-05-13 13:57:48] [INFO   ] Run [PRINT] command. 
+[2023-05-13 13:57:48] [FINEST ] Command completed successfully. 
